@@ -1,0 +1,226 @@
+* {
+  box-sizing : border-box;
+}
+
+.Balloons {
+  --clr-text:black;
+  --clr-bg:white;
+  --myimg : url('hotair.jpg');
+  --clr-bt-hover: rgb(153, 214, 255);
+  --myborder:rgb(153, 214, 255);
+}
+
+.Gear {
+  --clr-text:black;
+  --clr-bg:white;
+  --myimg: url('gear.jpg');
+  --myshadow: rgb(77,166,255);
+  --clr-bt-hover: rgb(0,77,153);
+  --myborder:rgb(0,77,153);
+}
+
+.Beach {
+  --clr-text:black;
+  --clr-bg:white;
+  --myimg : url('beach.jpg');
+  --clr-bt-hover: rgb(51,153,51);
+  --myborder:rgb(51,153,51);
+}
+
+.Ligth-Mode {
+  --clr-text:black;
+  --clr-bg:white;
+  --myimg: url('white.jpg');
+  --clr-bt-hover :rgb(179,179,179);
+  --myborder : black;
+  --myshadow: rgb(179,179,179);
+}
+
+.Dark-Mode {
+  --clr-text:white;
+  --clr-bg:rgb(38,38,38);
+--myimg: url('black.jpg');
+--clr-bt-hover:rgb(89,89,89);
+--myshadow: rgb(250,250,250);
+--myborder :rgb(128,0,0);
+}
+
+.flex-container {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 600px;
+  justify-content: center;
+}
+
+.flex-container div {
+  padding:30px;
+}
+
+.flex-item {
+  text-align:center;
+  align-self: center;
+}
+
+select {
+  cursor: pointer;
+  color: var(--clr-text);
+  padding:10px;
+  border:2px solid var(--myborder);
+  border-radius:5px;
+  box-shadow: 3px 3px 5px var(--myshadow);
+  background-color: var(--clr-bg);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+select option {
+  font-weight: bold;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--clr-bg);
+  color:var(--clr-text);
+  border: 2px solid var(--myborder);
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px var(--myshadow);
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn:hover, select:hover {
+  background-color: var(--clr-bt-hover);
+}
+
+.count {
+  color:var(--clr-text);
+  background-color: var(--clr-bg);
+  font-size: 55px;
+  font-weight: bold;
+  margin-top:20px;
+  height:150px;
+  width:150px;
+  border-radius: 5px;
+  border: 2px solid var(--myborder);
+  box-shadow: 3px 3px 5px var(--myshadow);
+}
+
+input {
+  cursor: pointer;
+  color:var(--clr-text);
+  background-color: var(--clr-bg);
+  width:80px;
+  padding:10px;
+  border: 2px solid var(--myborder);
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px var(--myshadow);
+  font-size: 20px;;
+  font-weight: bold;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+label {
+  display: inline-block;
+  color: var(--clr-text) ;
+  font-size: 20px ;
+  font-weight: bold;
+  background-color: var(--clr-bg);
+  border: 2px solid var(--myborder);
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px var(--myshadow);
+  padding: 10px;
+  width:300px;
+  margin-right:10px;
+}
+
+article {
+  position: absolute;
+  background-color: rgb(0,0,0,0.8);
+  bottom: 0;
+  left:2%;
+  top:2%;
+  right:10px;
+  color: white;
+  font-size: 20px;
+  line-height: 45px;
+  padding:10% 0% 10% 20%;
+  width: 96%;
+  height: 96%;
+}
+
+.message {
+  cursor: pointer;
+  color:white;
+  background-color: rgb(0,0,0,0.5);
+  font-size: 18px;
+  margin-left:20px;
+  font-weight: normal;
+  text-align: center;
+  box-shadow: none;
+  border: 2px solid var(--myborder)
+}
+
+#show {
+  box-shadow: none;
+}
+
+article .message:hover{
+  background-color: black;
+}
+
+html {
+  height:100%;
+}
+
+body {
+  background-image: var(--myimg);
+  background-size:cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@media (max-width:850px) {
+article {padding:10% 1% 10% 10%;font-size: 17px;}
+.message  {font-size: 15px;}
+article label {display: inline;}
+}
+
+@media (max-width:650px) {
+.flex-container div {padding:10px}
+label {width:200px}
+.flex-container {justify-content: flex-start;align-content:center;}
+.count {width:120px; height: 120px;}
+article {padding:5% 1% 5% 3%;font-size: 15px;}
+.message {font-size: 12px;margin-left:3px}
+}
+
+@media (max-height:560px) {
+  .flex-container {justify-content: flex-start; align-content: space-around; height: 340px; }
+  .flex-container div {padding:10px}
+  label {padding: 7px;}
+  section {padding:7px}
+  input {padding:px}
+  .count {width:120px; height: 120px;}
+  article {padding:5% 1% 5% 5%}
+}
